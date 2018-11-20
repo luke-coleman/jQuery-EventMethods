@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script>
+
+    $(document).ready(function(){
+
+      $("p").dblclick(function(){
+        $(this).hide();
+      });
+
+      $("h1").mouseenter(function(){
+        alert("You have entered p1!");
+      });
+
+      $("h1").mouseleave(function(){
+        alert("See you later!");
+      });
+
+      $("h2").mousedown(function(){
+        alert("Mouse down over to h3!");
+      });
+
+      //mouseenter achieves the same
+      $("h3").hover(function(){
+        alert("You have hovered over h3, hello!");
+      },
+      function(){
+        alert("You have left h3, bye!")
+      });
+
+      $("input").focus(function(){
+        $(this).css("background-color", "#cccccc");
+      });
+
+      $("input").blur(function(){
+        $(this).css("background-color", "#ffffff");
+      });
+
+      //on allows for multiple event handlers to be used
+      //on the selected element.
+      $("#pic").on({
+        mouseenter: function(){
+          $(this).css("background-color", "lightgray");
+        },
+        mouseleave: function(){
+          $(this).css("background-color", "white");
+        },
+        click: function(){
+          $(this).css("background-color", "yellow");
+        }
+      });
+
+    });
+
+
+
+  </script>
+
+</head>
+
+<body>
+
+<h1> My First Heading </h1>
+<br>
+<h2> I need this for the sake of it </h2>
+<br>
+<h3> Again, for the sake of testing. </h3>
+<br>
+<p> My first paragraph. </p>
+<br>
+<p id="pic"> An example with on </p>
+<br>
+<form>
+  <input type="text">
+  <input type="text">
+<form>
+<br>
+<button> Click me </button>
+
+</body>
+</html>
